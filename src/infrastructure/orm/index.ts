@@ -1,5 +1,5 @@
-import { Sequelize } from 'sequelize';
-const config = require('./sequelize');
+import { Sequelize } from 'sequelize'
+const config = require('./sequelize')
 
 const sequelize = new Sequelize(
 	config.database,
@@ -8,4 +8,4 @@ const sequelize = new Sequelize(
 	config
 );
 
-export { sequelize };
+export { sequelize }
