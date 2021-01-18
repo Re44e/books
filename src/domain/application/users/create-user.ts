@@ -1,11 +1,11 @@
 
-import { IRepository } from '../../business/repository-interface'
+import { IUserRepository } from '../../business/user-interface'
 import { Request, Response } from 'express'
 
 export class CreateUser {
 
 	constructor(
-		private readonly repository: IRepository
+		private readonly repository: IUserRepository
 	) { }
 
 	execute = async (req: Request, res: Response): Promise<void> => {
