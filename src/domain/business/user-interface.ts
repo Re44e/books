@@ -7,5 +7,6 @@ export interface IUserRepository {
 
   createUser(data: IUsersDTO): Promise<User>
   addBook(data:IBooksDTO): Promise<Books>
+  getUser(id:string): Promise<any>
 
 }

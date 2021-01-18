@@ -1,4 +1,4 @@
-import { Model, DataTypes, BelongsTo } from 'sequelize'
+import { Model, DataTypes} from 'sequelize'
 import { sequelize } from '../../../orm/index'
 import { v4 as uuid } from 'uuid'
 import { User } from './user';
@@ -28,5 +28,5 @@ Books.init(
 	}
 );
 
-Books.belongsTo(User, { foreignKey: 'logged_user_id'})
+Books.belongsTo(User, { foreignKey: 'logged_user_id' });
 
