@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      user_id: {
+      logged_user_id: {
         type: Sequelize.UUID,
         allowNull: false,
       },

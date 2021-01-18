@@ -7,14 +7,14 @@ export class Books extends Model {
 	public id!: string;
 	public title!: string;
   public pages!: number;
-  public user_id!: string;
+  public logged_user_id!: string;
 }
 
 Books.init(
 	{
 		title: DataTypes.STRING,
     pages: DataTypes.INTEGER,
-    user_id: DataTypes.UUIDV4,
+    logged_user_id: DataTypes.UUIDV4,
 	},
 	{
 		hooks: {
@@ -28,5 +28,5 @@ Books.init(
 	}
 );
 
-Books.belongsTo(User, { foreignKey: 'user_id'})
+Books.belongsTo(User, { foreignKey: 'logged_user_id'})
 

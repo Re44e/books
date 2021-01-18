@@ -6,6 +6,6 @@ import { IBooksDTO } from "./resources/books-dto"
 export interface IUserRepository {
 
   createUser(data: IUsersDTO): Promise<User>
-  addBook(logged_user_id: string, data:IBooksDTO): Promise<Books>
-  
+  addBook(data:IBooksDTO): Promise<Books>
+
 }

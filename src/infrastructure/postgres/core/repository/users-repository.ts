@@ -13,9 +13,9 @@ export class UserRepository implements IUserRepository {
     catch(error){ throw error; }
   }
 
-  public async addBook(logged_user_id: string, data:IBooksDTO) {
+  public async addBook(data:IBooksDTO) {
     try { 
-      return await Books.create({ user_id: logged_user_id, ...data});
+      return await Books.create({...data});
     }
     catch(error){ throw error; }
   }
