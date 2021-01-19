@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "migrations": "npx sequelize-cli db:migrate",
+    "seeds":"npx sequelize-cli db:seed:all",
     "tests": "jest",
     "dev": "tsnd --inspect=0.0.0.0:9229 --transpile-only --respawn --ignore-watch node_modules src/server.ts"
   },
