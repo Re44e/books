@@ -12,7 +12,10 @@ Node.js TypeScript Express.js Jest Docker Postgres Postman
 #
 **Instructions for running the project**
 
+Note: Create an .env file according to the env.example file.</br>
+Dependencies: Docker and Docker compose.
 
+#
 ```zsh
   Run application: docker-compose up
 ```
