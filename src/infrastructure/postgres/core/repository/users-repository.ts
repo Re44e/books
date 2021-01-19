@@ -4,7 +4,7 @@ import { IUsersDTO } from '../../../../domain/business/resources/users-dto'
 import { IBooksDTO } from '../../../../domain/business/resources/books-dto'
 import { Books } from '../entities/books';
 import { sequelize } from '../../../orm';
-import { LendBook } from '../entities/lend-books';
+import { Operations } from '../entities/operations';
 
 export class UserRepository implements IUserRepository {
 
@@ -20,8 +20,8 @@ export class UserRepository implements IUserRepository {
     try { 
       const book = await Books.create({...data},{ transaction: t });
 
-      // Inicializa registro na tabela de operações de empréstimo.
-      await LendBook.create(
+      // Inicializa registros na tabela de operações de empréstimo.
+      await Operations.create(
         { book_id: book.id, from_user: data.logged_user_id }, 
         { transaction: t }
       );

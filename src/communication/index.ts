@@ -1,10 +1,10 @@
 import { Router } from 'express'
 import { usersRoutes } from './users.routes'
-import { lentBookRoutes } from './operations.routes'
+import { operationsRoutes } from './operations.routes'
 
 const routes = Router();
 
 routes.use(usersRoutes);
-routes.use(lentBookRoutes);
+routes.use(operationsRoutes);
 
 export { routes } 

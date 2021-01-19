@@ -2,7 +2,7 @@ import { Model, DataTypes } from 'sequelize'
 import { sequelize } from '../../../orm/index'
 import { v4 as uuid } from 'uuid'
 
-export class LendBook extends Model {
+export class Operations extends Model {
 	public id!: string;
 	public book_id!: string;
 	public from_user!: string;
@@ -11,7 +11,7 @@ export class LendBook extends Model {
 	public returned_at!: string;
 }
 
-LendBook.init(
+Operations.init(
 	{
 		book_id: DataTypes.UUIDV4,
 		from_user: DataTypes.UUIDV4,
@@ -26,7 +26,7 @@ LendBook.init(
 			}
 
 		},
-		tableName: 'lend_books',
+		tableName: 'operations',
 		sequelize,
 	}
 );

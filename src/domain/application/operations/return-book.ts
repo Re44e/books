@@ -1,7 +1,7 @@
 import { IOperationsRepository } from '../../business/operations-interface'
 import { Request, Response } from 'express'
 
-export class LendBook {
+export class ReturnBook {
 
 	constructor(
 		private readonly repository: IOperationsRepository
@@ -11,9 +11,9 @@ export class LendBook {
 		const data = req.body;
 		
 		try {
-			const register = await this.repository.lendBook(data);
+			const register = await this.repository.returnBook(data);
 			if(!register){
-				return res.status(200).json({ message: "O livro solicitado não está disponível..." });
+				return res.status(200).json({ message: "Este livro já foi devolvido..." });
 			}
 			return res.status(201).json({ message: "Operação realizada com sucesso..." });
 		} catch (error) {

@@ -3,3 +3,8 @@ export interface ILendBooksDTO {
   logged_user_id: string
   to_user: string
 }
+
+export interface IReturnBooksDTO {
+  logged_user_id: string
+  book_id: string
+}

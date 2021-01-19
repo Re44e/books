@@ -7,13 +7,13 @@ export class GetUser {
 		private readonly repository: IUserRepository
 	) { }
 
-	execute = async (req: Request, res: Response): Promise<void> => {
+	execute = async (req: Request, res: Response): Promise<Response> => {
 		const {id} = req.params
 		try {
 			const user = await this.repository.getUser(id);
-			res.status(200).json({ message: "Operação realizada com sucesso...", user });
+			return res.status(200).json({ message: "Operação realizada com sucesso...", user });
 		} catch (error) {
-			res.status(401).json({ message: "Erro: consulte administração...", details: error.message });
+			return res.status(401).json({ message: "Erro: consulte administração...", details: error.message });
 		}
 	}
 

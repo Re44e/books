@@ -1,9 +1,10 @@
-import { LendBook } from '../../infrastructure/postgres/core/entities/lend-books'
-import { ILendBooksDTO } from "./resources/lend-book-dto"
+import { Operations } from '../../infrastructure/postgres/core/entities/operations'
+import { ILendBooksDTO, IReturnBooksDTO } from "./resources/operations-dto"
 
 
 export interface IOperationsRepository {
 
-  lendBook(payload:ILendBooksDTO): Promise<[number, LendBook[]] | false>
+  lendBook(payload:ILendBooksDTO): Promise<[number, Operations[]] | false>
+  returnBook(payload:IReturnBooksDTO): Promise<[number, Operations[]] | false>
 
 }

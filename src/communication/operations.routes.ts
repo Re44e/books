@@ -1,9 +1,10 @@
 import { Router } from 'express'
-import { lendbook } from '..//domain/application/operations/main'
+import { lendbook, returnbook } from '..//domain/application/operations/main'
 
-const lentBookRoutes = Router();
+const operationsRoutes = Router();
 
-lentBookRoutes.put('/book/lend', lendbook.execute);
+operationsRoutes.put('/book/lend', lendbook.execute);
+operationsRoutes.put('/book/return', returnbook.execute);
 
 
-export { lentBookRoutes };
+export { operationsRoutes };
