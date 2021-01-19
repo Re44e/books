@@ -3,7 +3,7 @@
 #
 **Overview**
 
-An API for abstraction of book lending.
+An API for abstraction of book loans.
 
 **Technologies**
 
