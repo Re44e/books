@@ -3,6 +3,8 @@ import { IUserRepository } from '../../../../domain/business/user-interface'
 import { IUsersDTO } from '../../../../domain/business/resources/users-dto'
 import { IBooksDTO } from '../../../../domain/business/resources/books-dto'
 import { Books } from '../entities/books';
+import { sequelize } from '../../../orm';
+import { LendBook } from '../entities/lend-books';
 
 export class UserRepository implements IUserRepository {
 
@@ -14,10 +16,20 @@ export class UserRepository implements IUserRepository {
   }
 
   public async addBook(data:IBooksDTO) {
+    const t = await sequelize.transaction();
     try { 
-      return await Books.create({...data});
+      const book = await Books.create({...data},{ transaction: t });
+
+      // Inicializa registro na tabela de operações de empréstimo.
+      await LendBook.create(
+        { book_id: book.id, from_user: data.logged_user_id }, 
+        { transaction: t }
+      );
+
+      await t.commit();
+      return book;
     }
-    catch(error){ throw error; }
+    catch(error){ await t.rollback(); throw error;}
   }
 
   public async getUser(id:string) {

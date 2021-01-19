@@ -1,6 +1,8 @@
 /**
  * Área dedicada aos testes de integração:
- * Estes testes visam garantir que serviços fundamentais estão operando. 
+ * Estes testes visam garantir que serviços fundamentais estão operando.
+ * 
+ * Metodologia de teste aplicada: "RGR" (Red Green Refactor) 
  */
 
 import request from 'supertest'

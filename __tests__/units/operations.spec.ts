@@ -4,5 +4,5 @@
  * Justamente para garantir, que os serviços essenciais da aplicação estão
  * operando conforme esperado. 
  * 
- * Metodologia de teste aplicada: "RGR" (Red - Green - Refactor)
+ * Metodologia de teste aplicada: "RGR" (Red Green Refactor)
  */
