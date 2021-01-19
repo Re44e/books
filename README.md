@@ -18,7 +18,10 @@ Node.js TypeScript Express.js Jest Docker Postgres Postman
 ```
 
 ```zsh
-  Enter the application container and run the following commands:
+  Enter the application container: docker exec -it api sh 
+```
+```zsh
+  Then run the following commands:
   
   $ yarn migrations
   $ yarn tests
