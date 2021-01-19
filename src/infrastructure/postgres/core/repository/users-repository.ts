@@ -45,9 +45,21 @@ export class UserRepository implements IUserRepository {
         where: { logged_user_id: id },
       });
 
+      const lentBooks = await Operations.findOne({
+        attributes:['book_id','from_user','to_user','returned_at'],
+        where: { from_user: id }
+      })
+
+      const borrowedBooks = await Operations.findOne({
+        attributes:['book_id','from_user','to_user','returned_at'],
+        where: { to_user: id }
+      })
+
       const result = {
         details: user,
-        collections: books
+        collections: books,
+        lent_books: lentBooks || 'Not found register',
+        borrowed_books: borrowedBooks || 'Not found register'
       }
 
       return result;

@@ -27,7 +27,7 @@ export class OperationsRepository implements IOperationsRepository {
           {
             from_user: payload.logged_user_id,
             to_user: payload.to_user, 
-            lent_at: new Date(),
+            lent_at: Date.now(),
             returned_at: null
           },
           { where: { book_id: payload.book_id }, transaction: t }
@@ -52,7 +52,7 @@ export class OperationsRepository implements IOperationsRepository {
 
       if(validation){
         const operation = await Operations.update(
-          { returned_at: new Date(), lent_at: null },
+          { returned_at: Date.now(), lent_at: null },
           { 
             where: { book_id: payload.book_id, }, 
             transaction: t 
