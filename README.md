@@ -7,7 +7,8 @@ An API for abstraction of book loans.
 
 **Technologies**
 
-Node.js TypeScript Express.js Jest Docker Postgres Postman
+Node.js TypeScript Express.js Jest Docker Postgres Postman,</br>
+Architecture inspired by the DDD (Domain-Driven-Domain) approach.
 
 #
 **Instructions for running the project**
