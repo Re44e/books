@@ -6,15 +6,15 @@ import { User } from './user';
 export class Books extends Model {
 	public id!: string;
 	public title!: string;
-  public pages!: number;
-  public logged_user_id!: string;
+  	public pages!: number;
+  	public logged_user_id!: string;
 }
 
 Books.init(
 	{
 		title: DataTypes.STRING,
-    pages: DataTypes.INTEGER,
-    logged_user_id: DataTypes.UUIDV4,
+    		pages: DataTypes.INTEGER,
+    		logged_user_id: DataTypes.UUIDV4,
 	},
 	{
 		hooks: {
