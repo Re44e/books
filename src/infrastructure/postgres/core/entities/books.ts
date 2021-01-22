@@ -27,6 +27,3 @@ Books.init(
 		sequelize,
 	}
 );
-
-Books.belongsTo(User, { foreignKey: 'logged_user_id' });
-
