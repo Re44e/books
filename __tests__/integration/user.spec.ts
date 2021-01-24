@@ -9,7 +9,7 @@ import request from 'supertest'
 import { app } from '../../src/app'
 
 describe('User', () => {
-  it('Should integrate with the registration service', async () => {
+  it('Should integrate with the user registration service', async () => {
 
     const response = await request(app)
     .post('/user')
