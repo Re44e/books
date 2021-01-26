@@ -12,7 +12,7 @@ export class OperationsRepository implements IOperationsRepository {
    * Com isso garantimos o uso mínimo de armazenamento de dados para essas operação.
    */
 
-  public async lendBook(payload: ILendBooksDTO){
+  public async lendBook(payload:ILendBooksDTO){
     const t = await sequelize.transaction();
     try {
       const validation = await Operations.findOne({
